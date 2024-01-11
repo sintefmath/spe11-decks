@@ -1,0 +1,1068 @@
+-- Copyright (C) 2023 NORCE
+----------------------------------------------------------------------------
+RUNSPEC
+----------------------------------------------------------------------------
+DIMENS 
+898 1 120 /
+
+EQLDIMS
+/
+
+TABDIMS
+7 1* 200000 /
+
+OIL
+GAS
+CO2STORE
+DISGAS
+VAPOIL
+
+METRIC
+
+START
+1 'JAN' 2025 /
+
+WELLDIMS
+2 120 2 2 /
+
+UNIFIN
+UNIFOUT
+----------------------------------------------------------------------------
+GRID
+----------------------------------------------------------------------------
+INIT
+INCLUDE
+'GRID.INC' /
+
+INCLUDE
+'PERMX.INC' /
+
+COPY 
+PERMX PERMY /
+PERMX PERMZ /
+/
+
+OPERATE
+PERMZ 1* 1* 1* 1* 1* 1* 'MULTX' PERMZ 0.1 /
+/
+
+INCLUDE
+'PORO.INC' /
+
+INCLUDE
+'THCONR.INC' /
+
+----------------------------------------------------------------------------
+PROPS
+----------------------------------------------------------------------------
+INCLUDE
+'TABLES.INC' /
+
+DIFFC
+1 1 0.001728 0.001728 8.64e-05 8.64e-05 / --The molecular weights are set to 1 since the diffusion coefficients are given for mass fractions
+
+SPECROCK
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+40.0 0.85
+70.0 0.85 /
+----------------------------------------------------------------------------
+REGIONS
+----------------------------------------------------------------------------
+INCLUDE
+'SATNUM.INC' /
+INCLUDE
+'FIPNUM.INC' /
+----------------------------------------------------------------------------
+SOLUTION
+---------------------------------------------------------------------------
+EQUIL
+0 196.2 1200.0 0 0 0 1 1 0 /
+
+RPTRST
+'BASIC=2' DEN KRG/
+
+RSVD
+0   0.0
+1200.0 0.0 /
+
+RVVD
+0   0.0
+1200.0 0.0 /
+
+RTEMP
+60.0 /
+
+----------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------
+PERFORMA
+FGIP
+FGIR
+FGIT
+WBHP
+/
+WGIR
+/
+WGIT
+/
+----------------------------------------------------------------------------
+SCHEDULE
+----------------------------------------------------------------------------
+RPTRST
+'BASIC=2' DEN KRG/
+
+WELSPECS
+'INJ0' 'G1' 389 1 1* 'GAS' 0.15/
+'INJ1' 'G1' 710 1 1* 'GAS' 0.15/
+/
+COMPDAT
+'INJ0' 389 1 105 105 'OPEN' 1* 1* 0.3 /
+'INJ1' 710 1 71 71 'OPEN' 1* 1* 0.3 /
+/
+
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 365.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+'INJ1' 'GAS' OPEN
+'RATE'  1.618471E+03  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1*365.0
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+1000*36.5
+/
+TUNING
+1e-2 7300.0 1e-10 2* 1e-12/
+/
+/
+WCONINJE
+'INJ0' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+'INJ1' OIL SHUT
+'RATE'  0.000000E+00  1* 400/
+/
+WTEMP
+'INJ0' 10.0 /
+'INJ1' 10.0 /
+/
+TSTEP
+500*36.5
+/
