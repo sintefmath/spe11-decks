@@ -3,3 +3,6 @@ output/*
 *.DBG
 *.EGRID
 *.INIT
+*.SMSPEC
+*.UNRST
+*.UNSMRY
