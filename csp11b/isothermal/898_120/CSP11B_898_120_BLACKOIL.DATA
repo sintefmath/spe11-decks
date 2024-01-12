@@ -55,7 +55,7 @@ INCLUDE
 'TABLES.INC' /
 
 INCLUDE
-'../co2_miscible/PVT.inc' /
+'../both_miscible/PVT.inc' /
 
 DIFFC
 1 1 0.001728 0.001728 8.64e-05 8.64e-05 / --The molecular weights are set to 1 since the diffusion coefficients are given for mass fractions
